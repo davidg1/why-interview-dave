@@ -1,0 +1,720 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Why Interview Dave?</title>
+
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Assistant:600|Raleway:400,500,600,700,800,900|Patua+One|Lobster|Bitter|Source+Code+Pro:700">
+    <link rel="stylesheet" href="css/styles.css">
+  </head>
+  <body>
+    
+    <div id="loading-modal">
+      <div id="loading-spinner"></div>
+    </div>
+
+    <div class="container-md">
+      <div class="row" id="intro-row">
+        <div class="col-12 col-lg-7">
+          <div id="intro-text">
+            <h1>
+              <span>
+                <svg class="embellishment" id="embellishment-left" xmlns="http://www.w3.org/2000/svg" width="48" height="26" viewBox="0 0 48 26">
+                  <title>embellishment-left</title>
+                  <path d="M33.57378,8.07553a4.92866,4.92866,0,0,1,1.4366-.27382c3.10238-.211,4.22638,2.90065,3.25092,5.314-2.09852,5.192-8.88661,5.92889-12.94241,2.93838a7.473,7.473,0,0,1-.84672-.72553,6.46789,6.46789,0,0,1-.98172-6.8364c3.04733-7.30947,12.214-8.68447,17.339-6.1428C46.81963,5.32014,48.0161,12.4472,45.198,17.90533c-3.55374,6.88287-13.02016,8.79316-19.4992,5.00354-2.20833-1.29167-8.33333-8.125-8.79167-8.58334S14.08832,11.232,12.74073,9.95081C10.363,7.69021,7.02985,5.982,4.61526,9.15911c-2.35072,3.09376-.80238,8.40524,3.415,8.59451,2.84158.12753,3.73188-5.10052.818-5.01223-1.375.04167-1.98288.75081-3.06622,2.79248-1.26266-4.43781,2.779-6.27114,5.63285-4.52565,1.4978.91609,2.1352,2.78032,1.20687,5.27966a5.35842,5.35842,0,0,1-4.50622,3.121A6.302,6.302,0,0,1,1.6355,14.51331,7.91229,7.91229,0,0,1,4.86943,5.9605a7.25071,7.25071,0,0,1,7.69805-.76477C15.135,6.51,17.02043,9.26433,18.95256,11.334c2.38511,2.55483,4.66713,5.68324,7.42636,7.89987,3.66021,2.94045,9.76329,3.62243,13.61444.96938,4.31708-2.974,6.02526-10.47956,2.37247-14.43a9.21,9.21,0,0,0-9.10119-2.4475c-3.39095.85145-6.66665,3.11821-7.69076,6.33274-1.27363,3.99777,1.87256,7.37339,5.91822,7.058,2.83854-.2213,5.49876-2.88815,5.19222-5.83033C36.51424,9.25375,35.03644,8.41543,33.57378,8.07553Z"/>
+                </svg>
+                 Why
+                 <svg class="embellishment" id="embellishment-right" xmlns="http://www.w3.org/2000/svg" width="48" height="26"  viewBox="0 0 48 26">
+                   <title>embellishment-right</title>
+                   <path d="M14.42622,8.07553a4.92866,4.92866,0,0,0-1.4366-.27382c-3.10238-.211-4.22638,2.90065-3.25092,5.314,2.09852,5.192,8.88661,5.92889,12.94241,2.93838a7.473,7.473,0,0,0,.84672-.72553,6.46789,6.46789,0,0,0,.98172-6.8364c-3.04733-7.30947-12.214-8.68447-17.339-6.1428C1.18037,5.32014-.0161,12.4472,2.802,17.90533c3.55374,6.88287,13.02016,8.79316,19.4992,5.00354,2.20833-1.29167,8.33333-8.125,8.79167-8.58334s2.81879-3.09355,4.16638-4.37472c2.37777-2.2606,5.71088-3.9688,8.12547-.7917,2.35072,3.09376.80238,8.40524-3.415,8.59451-2.84158.12753-3.73188-5.10052-.818-5.01223,1.375.04167,1.98288.75081,3.06622,2.79248,1.26266-4.43781-2.779-6.27114-5.63285-4.52565-1.4978.91609-2.1352,2.78032-1.20687,5.27966a5.35842,5.35842,0,0,0,4.50622,3.121,6.302,6.302,0,0,0,6.48011-4.89554A7.91229,7.91229,0,0,0,43.13057,5.9605a7.25071,7.25071,0,0,0-7.69805-.76477C32.865,6.51,30.97957,9.26433,29.04744,11.334c-2.38511,2.55483-4.66713,5.68324-7.42636,7.89987-3.66021,2.94045-9.76329,3.62243-13.61444.96938-4.31708-2.974-6.02526-10.47956-2.37247-14.43a9.21,9.21,0,0,1,9.10119-2.4475c3.391.85145,6.66665,3.11821,7.69076,6.33274,1.27363,3.99777-1.87256,7.37339-5.91822,7.058-2.83854-.2213-5.49876-2.88815-5.19222-5.83033C11.48576,9.25375,12.96356,8.41543,14.42622,8.07553Z"  />
+                 </svg>
+              </span>
+              <br>
+              <span>Interview Dave?</span>
+            </h1>
+            <hr>
+            <p>I am seeking a position as a <span class="highlight">Software Developer</span> and this online résumé provides answers to the above question with information regarding my skills, education, experience and application portfolio.</p>
+            <button type="button" class="btn btn-primary" id="qualifications-button">Qualifications &amp; Portfolio</button>
+          </div>
+        </div>
+
+        <div class="offset-1 col-10 offset-md-2 col-md-8 offset-lg-0 col-lg-5">
+          <div id="intro-images">
+            <div id="card-container">
+              <div id="card">
+                <div id="front">
+                  <img src="images/smiling-man-with-laptop.jpg" alt="smiling man with laptop" class="img-fluid" id="intro-image">
+                </div>
+                <div id="back">
+                  <div id="disclaimer-info-1">
+                    <p>This is <strong>NOT</strong> a picture of me.&nbsp; It is a <a href="https://www.123rf.com/photo_83467570_cheerful-youthful-bearded-guy-communicating-via-gadget-on-resort.html" target="_blank">purchased stock photo</a>.</p>
+                    <p>In comparison I am actually much better looking and more physically fit (although a tad older).</p>
+                    <button type="button" class="btn btn-primary" id="disclaimer-info-button-1">OK</button>
+                  </div>
+                  <div id="disclaimer-info-2">
+                    <p>This also is <strong>NOT</strong> a picture of me.&nbsp; It is another <a href="https://www.123rf.com/photo_53129331_computer-specialist-working-in-a-bright-office.html" target="_blank">purchased stock photo</a> which I "enhanced" using Photoshop.</p>
+                    <p>I imagine I would look like this if I had spent years programming during the heyday of Internet Explorer.</p>
+                    <button type="button" class="btn btn-primary" id="disclaimer-info-button-2">OK</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div id="disclaimer-links">
+              <a href="#" id="disclaimer-link-1"><i class="fa fa-hand-o-right hand hand-pointing-right" aria-hidden="true"></i>Image Disclaimer<i class="fa fa-hand-o-left hand hand-pointing-left" aria-hidden="true"></i></a>
+              <a href="#" id="disclaimer-link-2"><i class="fa fa-hand-o-right hand hand-pointing-right" aria-hidden="true"></i>Another Disclaimer<i class="fa fa-hand-o-left hand hand-pointing-left" aria-hidden="true"></i></a>
+              <p id="click-button-caption"><i class="fa fa-star" aria-hidden="true"></i>&nbsp; Click the "Qualifications & Portfolio" Button&nbsp; <i class="fa fa-star" aria-hidden="true"></i></p>
+            </div>
+
+            <div id="read-disclaimer-instructions">
+              <i class="fa fa-arrow-circle-up" aria-hidden="true"></i>
+              <p><span class="cursive">Please </span> read this disclaimer before proceeding.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container-md" id="qualifications-container">
+      <div class="row">
+        <div class="col-12">
+          <nav>
+            <div class="nav nav-tabs" id="qualifications-tabs" role="tablist">
+              <a class="nav-link active" href="#skills-panel" aria-controls="skills" aria-selected="true" role="tab" data-toggle="tab" id="skills-link"><i class="fa fa-code" aria-hidden="true"></i>Skills</a>
+              <a class="nav-link" href="#education-panel" aria-controls="education" aria-selected="false" role="tab" data-toggle="tab" id="education-link"><i class="fa fa-graduation-cap" aria-hidden="true"></i>Education</a>
+              <a class="nav-link" href="#experience-panel" aria-controls="experience" aria-selected="false" role="tab" data-toggle="tab" id="experience-link"><i class="fa fa-hourglass" aria-hidden="true"></i>Experience</a>
+              <a class="nav-link" href="#portfolio-panel" aria-controls="portfolio" aria-selected="false" role="tab" data-toggle="tab" id="portfolio-link"><i class="fa fa-book" aria-hidden="true"></i>Portfolio</a>
+              <a class="nav-link" href="#contact-panel" aria-controls="contact" aria-selected="false" role="tab" data-toggle="tab" id="contact-link"><i class="fa fa-address-card" aria-hidden="true"></i>Contact</a>
+            </div>
+          </nav>
+
+          <div class="tab-content">
+
+            <!-- Skills Tab Panel -->
+
+            <div role="tabpanel" class="tab-pane active" id="skills-panel">
+              <div class="row" id="skills-intro-row">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-3" id="skills-intro-image-col">
+                  <img src="images/skills.jpg" alt="skills" class="img-fluid">
+                  <img src="images/skills2.jpg" alt="skills" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-9" id="skills-intro-text-col">
+                  <h3>SKILLS</h3>
+                  <hr>
+                  <p>My software skills include a solid foundation in both front-end and back-end technologies including languages, frameworks, libraries, databases and productivity tools.&nbsp; Usage of many of the technologies listed below is demonstrated in the applications in my software portfolio.</p>
+                  <p>One of the attractive features of a career as a programmer is that the software development ecosystem is very large and is frequently changing and expanding which provides many opportunities to continuously be increasing and refining one's skill set.&nbsp; As someone who enjoys learning and solving problems, this field constantly offers many new and ongoing challenges.</p>
+                  <p>In addition to technical knowledge and capabilities, I am also proficient in both written and verbal communications and enjoy opportunities to apply these skills.</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/javascript.png" alt="javascript logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8 skills-description">
+                  <h2>Javascript</h2>
+                  <p>Beyond JavaScript basics I am also experienced working with the advanced features highlighted below:</p>
+                  <div class="ecmascript-list-wrapper">
+                    <div class="ecmascript-list" id="javascript-skills-list">
+                      <ul>
+                        <li>DOM Manipulation and Traversal</li>
+                        <li>Event Loop</li>
+                        <li><span class="monospace">this</span> keyword</li>
+                        <li>Scope and Scope Chain</li>
+                        <li>Closures</li>
+                        <li>AJAX</li>
+                        <li><span class="monospace">bind()</span>,  <span class="monospace">call()</span> and <span class="monospace">apply()</span> Methods</li>
+                      </ul>
+                      <ul>
+                        <li>Object-Oriented Concepts</li>
+                        <li>Prototypal Inheritance</li>
+                        <li>JSON</li>
+                        <li>Regular Expressions</li>
+                        <li>Array Functional Methods including:
+                          <ul>
+                            <li><span class="monospace">forEach()</span></li>
+                            <li><span class="monospace">map()</span></li>
+                            <li><span class="monospace">reduce()</span></li>
+                            <li><span class="monospace">filter()</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row" id="ecmascript-row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/es6.png" alt="ECMAScript 2015 logo" class="img-fluid skill-image square-image">
+                  <img src="images/es7-8-9-10.png" alt="ECMAScript ES7 ES8 ES9 ES10 logo" class="img-fluid skill-image square-image">
+                  <img src="images/es11-12-13.png" alt="ECMAScript ES11 ES12 ES13 logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8 skills-description">
+                  <h2>ES6 <span class="skills-heading-smaller">(ECMAScript 2015)</span></h2>
+                  <p>Of the new features added with ECMAScript 2015 (ES6), I am skilled at using the following enhancements listed below:</p>
+                  <div class="ecmascript-list-wrapper">
+                    <div class="ecmascript-list" id="es6-skills-list">
+                      <ul>
+                        <li>Block-scoped<span class="monospace"> let </span> and&nbsp; <span class="monospace">const</span></li>
+                        <li>Arrow Functions</li>
+                        <li>Template Literals</li>
+                        <li>Enhanced Object Literals</li>
+                        <li>Destructuring Assignments</li>
+                        <li>Default Parameters</li>
+                        <li>Spread Operator</li>
+                        <li>Rest Parameters</li>
+                        <li>Promises</li>
+                      </ul>
+                      <ul>
+                        <li><span class="monospace">for...of </span>Statement</li>
+                        <li>Classes</li>
+                        <li>Modules</li>
+                        <li>Array Methods including:
+                          <ul>
+                            <li><span class="monospace">every()</span></li>
+                            <li><span class="monospace">some()</span></li>
+                            <li><span class="monospace">find()</span></li>
+                            <li><span class="monospace">findIndex()</span></li>
+                          </ul>
+                        </li>
+                        <li>New Methods (Object, String, Number)</li>
+                        <li><span class="monospace">Map</span> and <span class="monospace">Set</span></li>
+                      </ul> 
+                    </div>
+                  </div>
+                  <h2>ES7, ES8, ES9, ES10, ES11, ES12, ES13 <span class="skills-heading-smaller" id="es7-to-es10-subheading">(ECMAScript 2016 - 2022)</span></h2>
+                  <p>For each annual release of the next version of ECMAScript, I have learned about many of the new features added to the specification including:</p>
+                  <div class="ecmascript-list-wrapper">
+                      <div class="ecmascript-list" id="es7-to-es10-skills-list">
+                        <ul>
+                          <li><span class="monospace">async</span> Functions/<span class="monospace">await</span> Expressions and <span class="no-break">Top-Level <span class="monospace">await</span> in Modules<span class="es-version"> (ES8, ES13)</span></span></li>
+                          <li>Array <span class="monospace">includes()</span>, <span class="monospace">flat()</span>, <span class="monospace">flatMap()</span> and <span class="no-break"><span class="monospace">at()</span><span class="es-version"> (ES7, ES10, ES13)</span></span></li>
+                          <li>String <span class="monospace">matchAll()</span>, <span class="monospace">replaceAll()</span>, <span class="monospace">at()</span>, <span class="monospace">padStart()</span>, <span class="monospace">padEnd()</span>, <span class="monospace">trimStart()</span> and <span class="no-break"><span class="monospace">trimEnd()</span><span class="es-version"> (ES8, ES10. ES11, ES12, ES13)</span></span></li>
+                          <li>Object Spread/Rest Properties<span class="es-version"> (ES9)</span></li>
+                          <li><span class="monospace">Object.entries()</span>, <span class="monospace">Object.values()</span>, <span class="monospace">Object.fromEntries()</span> and <span class="no-break"><span class="monospace">Object.hasOwn()</span><span class="es-version"> (ES8, ES10, ES13)</span></span></li>
+                          <li><span class="monospace">RegExp</span> Named Capture Groups, Lookbehind Assertions and <span class="no-break"><span class="monospace">d</span> Indices Flag<span class="es-version"> (ES9, ES13)</span></span></li>
+                          <li>Nullish Coalescing/Optional Chaining <span class="monospace">??</span>/<span class="monospace">?.</span>, Logical Assignment <span class="monospace">&&=</span>/<span class="monospace">||=</span>/<span class="monospace">??=</span> and <span class="no-break">Exponentiation <span class="monospace">**</span> Operators<span class="es-version"> (ES7, ES11, ES12)</span></span></li>
+                          <li>Optional <span class="monospace">catch</span> Binding<span class="es-version"> (ES10)</span></li>
+                          <li>Promise <span class="monospace">finally()</span>, <span class="monospace">any()</span> and <span class="monospace">allSettled()</span> <span class="es-version"> (ES9. ES11, ES12)</span></li>
+                          <li><span class="monospace">BigInt</span> Values<span class="es-version"> (ES11)</span></li>
+                          <li>Dynamic Imports <span class="monospace">import()</span> and <span class="no-break">Namespace Re-Exports<span class="es-version"> (ES11)</span></span></li>
+                          <li>Numeric Literal Separator <span class="monospace">_</span><span class="es-version"> (ES12)</span></li>
+                          <li><span class="monospace">class</span> Members:&nbsp; Public/Private Fields; Private Methods/Accessors; <span class="no-break">Static Initializion Blocks <span class="es-version"> (ES13)</span></span></li>
+                        </ul>
+                      </div>
+                    </div>
+                </div>
+              </div>
+
+              <div class="row" id="c-sharp-row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/c-sharp.png" alt="c sharp logo" class="img-fluid skill-image">
+                  <img src="images/net.png" alt="net logo" class="img-fluid skill-image square-image">
+                  <img src="images/aspnetcore.png" alt="aspnet core logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8 skills-description">
+                  <h2>C#</h2>
+                  <h2>.NET</h2>
+                  <h2>ASP.NET Core</h2>
+                  <p>In addition to being proficient in C# and .NET fundamentals, I am also knowledgeable about more advanced aspects including those listed below:</p>
+                  <div id="c-sharp-list-wrapper">
+                    <div id="c-sharp-skills-list">
+                      <ul>
+                        <li>LINQ</li>
+                        <li>Lambda Expressions</li>
+                        <li>Generics</li>
+                        <li>Delegates</li>
+                        <li>Extension Methods</li>
+                        <li>Anonymous Types</li>
+                        <li>Tuples</li>
+                        <li><span class="monospace">async</span>/<span class="monospace">await</span></li>
+                        <li>Nullable Types</li>
+                        <li>Regular Expressions</li>
+                        
+                      </ul>
+                      <ul>
+                        <li>File and Streams</li>
+                        <li>Serialization</li>
+                        <li>Attributes</li>
+                        <li>Operator Overloading</li>
+                        <li>Pattern Matching</li>
+                        <li>Collections including:
+                          <ul>
+                            <li><span class="monospace">List&lt;T&gt;</span></li>
+                            <li><span class="monospace">HashSet&lt;T&gt;</span></li>
+                            <li><span class="monospace">Stack&lt;T&gt;</span></li>
+                            <li><span class="monospace">Queue&lt;T&gt;</span></li>
+                            <li><span class="monospace">Dictionary&lt;K,V&gt;</span></li>
+                            <li><span class="monospace">LinkedList&lt;T&gt;</span></li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                  <p>Applying the knowledge above I am able to develop Web API applications using <span class="no-break">ASP.NET Core.</span>&nbsp; I am also familiar with using <span class="no-break">Entity Framework Core.</span></p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/java.png" alt="java logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8 skills-description">
+                  <h2>Java</h2>
+                  <h3>Oracle Certified Professional</h3>
+                  <p>In 2016 I earned the credential of Oracle Certified Professional (OCP) when I passed the Java SE6 Exam with a score of <span class="highlight">95%</span>.&nbsp; I gained significant knowledge during the rigorous process of studying and practicing in preparation for this exam.</p>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/html5.png" alt="html5 logo" class="img-fluid skill-image">
+                  <img src="images/css3.png" alt="css3 logo" class="img-fluid skill-image">
+                  <img src="images/sass.png" alt="sass logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>HTML5</h1>
+                  <h1>CSS3</h1>
+                  <h1>Sass</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/jquery.png" alt="jquery logo" class="img-fluid skill-image">
+                  <img src="images/bootstrap.png" alt="bootstrap logo" class="img-fluid skill-image">
+                  <img src="images/lodash.png" alt="lodash logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>jQuery</h1>
+                  <h1>Bootstrap</h1>
+                  <h1>Lodash</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/react.png" alt="react logo" class="img-fluid skill-image">
+                  <img src="images/redux.png" alt="redux logo" class="img-fluid skill-image">
+                  <img src="images/react-router.png" alt="react router logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skill-images-col">
+                  <img src="images/styled-components.png" alt="styled components logo" class="img-fluid skill-image">
+                  <img src="images/css-modules.png" alt="css modules logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>React</h1>
+                  <h1>Redux</h1>
+                  <h1>React Router</h1>
+                  <h1>Styled Components</h1>
+                  <h1>CSS Modules</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/node.png" alt="node logo" class="img-fluid skill-image">
+                  <img src="images/npm.png" alt="npm logo" class="img-fluid skill-image">
+                  <img src="images/express.png" alt="express logo" class="img-fluid skill-image">
+                  <img src="images/ejs.png" alt="ejs logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>Node</h1>
+                  <h1>npm</h1>
+                  <h1>Express</h1>
+                  <h1>EJS</h1>
+                  <h4>(Embedded JavaScript Templates)</h4>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/mysql.png" alt="mysql logo" class="img-fluid skill-image square-image">
+                  <img src="images/mongodb.png" alt="mongodb logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>MongoDB</h1>
+                  <h1>MySQL</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/git.png" alt="git logo" class="img-fluid skill-image">
+                  <img src="images/github.png" alt="github logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>Git</h1>
+                  <h1>Github</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/webpack.png" alt="webpack logo" class="img-fluid skill-image">
+                  <img src="images/gulp.png" alt="gulp logo" class="img-fluid skill-image">
+                  <img src="images/babel.png" alt="babel logo" class="img-fluid skill-image">
+                  <img src="images/postman.png" alt="postman logo" class="img-fluid skill-image">
+                  
+                </div>
+                <div class="col-12 skill-images-col">
+                  <img src="images/eslint.png" alt="eslint logo" class="img-fluid skill-image">
+                  <img src="images/emmet.png" alt="emmet logo" class="img-fluid skill-image">
+                  <img src="images/browsersync.png" alt="browsersync logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>Development Tools</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/adobe.png" alt="adobe logo" class="img-fluid skill-image">
+                  <img src="images/photoshop.png" alt="photoshop logo" class="img-fluid skill-image square-image">
+                  <img src="images/illustrator.png" alt="illustrator logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 skills-description">
+                  <h1>Adobe Photoshop</h1>
+                  <h1>Adobe Illustrator</h1>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="col-12 skill-images-col">
+                  <img src="images/github-pages.png" alt="github pages logo" class="img-fluid skill-image square-image">
+                  <img src="images/heroku.png" alt="heroku logo" class="img-fluid skill-image">
+                  <img src="images/firebase.png" alt="firebase logo" class="img-fluid skill-image">
+                </div>
+                <div class="col-12 skill-images-col">
+                  <img src="images/netlify.png" alt="netlify logo" class="img-fluid skill-image">
+                  <img src="images/vultr.png" alt="vultr logo" class="img-fluid skill-image square-image">
+                </div>
+                <div class="col-12 offset-lg-1 col-lg-10 offset-xl-2 col-xl-8 skills-description">
+                  <h1>GitHub Pages</h1>
+                  <h1>Heroku</h1>
+                  <h1>Firebase</h1>
+                  <h1>Netlify</h1>
+                  <h1>Vultr</h1>
+                  <h4>(Virtual Private Server)</h4>
+                  <p>As detailed in other sections, I have deployed each of my software applications on one of the above five platforms.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Education Tab Panel -->
+
+            <div role="tabpanel" class="tab-pane" id="education-panel">
+              <div class="row" id="university-of-michigan-row">
+                <div class="offset-3 col-6 offset-lg-0 col-lg-3" id="um-eecs-logo-col">
+                  <img src="images/michigan-eecs-logo.png" alt="michigan electrical engineering and computer science logo" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-6" id="um-details-col">
+                  <p>University of Michigan, Ann Arbor</p>
+                  <p>B.S. in Electrical Engineering, 1986</p>
+                  <p>Graduated <i>Magna Cum Laude</i><span>&nbsp; (GPA: 3.5)</span></p>
+                </div>
+                <div class="offset-3 col-6 offset-lg-0 col-lg-3" id="stadium-col">
+                  <img src="images/michigan-stadium.jpg" alt="michigan stadium" class="img-fluid">
+                  <p class="image-credit">Credit: Andrew Horne/Wikimedia Commons</p>
+                </div>
+              </div>
+
+              <div class="row" id="oracle-certification-row">
+                <div class="col-12" id="ocp-details-col">
+                  <img src="images/oracle-certified-professional.png" alt="oracle certified professional logo" class="img-fluid" id="ocp-logo-image">
+                  <p>Oracle Certified Professional</p>
+                  <p>Java SE6 Exam, 2016<span>&nbsp; (Score: 95%)</span></p>
+                </div>
+              </div>
+
+              <div class="row" id="self-study-row">
+                <div class="col-12 offset-md-1 col-md-10 offset-lg-0 col-lg-12">
+                  <img src="images/book-border.png" alt="book border" class="img-fluid">
+                  <img src="images/double-book-border.png" alt="book border" class="img-fluid">
+                </div>
+                <div class="col-12 col-lg-4" id="self-study-heading-col">
+                  <h1>SELF <br>STUDY</h1>
+                </div>
+                <div class="col-12 col-lg-8" id="self-study-details-col">
+                  <p>In educating myself for a position as a software developer,&nbsp; I have invested a significant amount of time and effort studying and practicing.&nbsp; The same approach I used in preparing for the Java SE6 OCP Exam with excellent results (95% score) was used in gaining knowledge about both front-end and back-end development technologies.</p>
+                  <p>Because of my ongoing membership to the extensive digital library at <a href="https://www.safaribooksonline.com" target="_blank">Safari Books Online</a>,&nbsp; I have been able to further my programming skills by reading many top-rated technology books (some of which are pictured above).  Safari also offers a wide range of excellent training videos by experts in their respective fields.</p>
+                  <p>Additionally I have made considerable use of the many outstanding articles, blogs, forums, videos and other resources that are available online geared towards software developers.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Experience Tab Panel -->
+
+            <div role="tabpanel" class="tab-pane" id="experience-panel">
+              <div class="row">
+                <div class="col-12" id="experience-col">
+                  <h3>EXPERIENCE</h3>
+                  <hr>
+                  <p>After graduation in 1986 with a Bachelor of Science in Electrical Engineering degree from the University of Michigan (<i>Magna Cum Laude</i>), I was employed at Allied-Signal Bendix Aerospace (South Bend, IN) in the test engineering department.&nbsp; This division designed aircraft engine controls and our department integrated systems that simulated aircraft engine signals used to test the engine control designs.&nbsp; In addition to hardware-oriented tasks I also performed software development that involved assembly language programming for Texas Instruments TMS99000 microprocessors.</p>
+                  <p>I moved back to Ann Arbor, MI after accepting a position as a test engineer at Xycom Automation Inc.&nbsp; Xycom designed and manufactured an extensive product line of electronic circuit boards based on the VMEbus computer architecture and a second product line of ruggedized, industrial PC computer systems.&nbsp; As an engineer I developed software in both C and assembly language (Intel and Motorola processors) to perform product functionality testing.</p>
+                  <p>After 2.5 years in the test engineering department I accepted a different position at Xycom as an application engineer in the VMEbus products group.&nbsp; My primary responsibilities focused on assisting customers with integrating our circuit boards into their systems.&nbsp; This support included working with their software code during development for a wide range of applications.</p>
+                  <p>After the above 6.5 year period I made a significant career change and became a sales engineer for companies including Rathsburg Associates, Allen-Bradley DataMyte, Microtek Controls and SBS Technologies.&nbsp; I was involved in both the sales of hardware and software products.</p>
+                  <p>In my last position as a sales engineer I had a territory that covered 13 states.&nbsp; I found the significant amount of travel involved undesirable and was "ready for a change".&nbsp; Eventually I ended up following an entrepreneurial path and started my own business based on my passion for woodworking.&nbsp; The business eventually led to me productizing the decorative stencils that I used in painting my woodworking products.&nbsp; I initially sold these stencils on eBay and based on the strong results created my own ecommerce web site to sell them.&nbsp; I developed this site using Microsoft FrontPage and used a table-based layout <i class="fa fa-smile-o"></i> .&nbsp; I also had an opportunity to use my programming skills when I developed a Visual Basic program that automated multiple tasks that allowed me to simultaneously create stencil designs (Adobe Illustrator files), generate associated HTML pages for the web site and update an Excel spreadsheet with product details.&nbsp; I discontinued operating this business in 2016.</p>
+                  <p>As documented and demonstrated in other sections, I have subsequently gained a significant amount of knowledge and experience in a wide range of both front-end and back-end software development technologies in addition to earning the credential of Oracle Certified Professional after passing the Java SE6 Exam.</p>
+                  <p>Shortly before the COVID-19 pandemic started I was in the process of seeking a position as a software developer.&nbsp; Because of the significant heath concerns and economic instability that resulted as the pandemic spread across the globe I discontinued my employment search.&nbsp; Now that we are in the waning days of the pandemic along with effective vaccinations and treatments I am resuming my search efforts.&nbsp; During this prolonged waiting time period I have made significant efforts to keep my knowledge and skills current and proficient.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Portfolio Tab Panel -->
+
+            <div role="tabpanel" class="tab-pane" id="portfolio-panel">
+              <div class="row" id="portfolio-header-row">
+                <div class="col-12 col-lg-6 order-lg-2">
+                  <img src="images/software-portfolio-text.png" alt="software portfolio" class="img-fluid" id="portfolio-header-text-image">
+                </div>
+                <div class="col-12 col-lg-6 order-lg-1">
+                  <img src="images/devices-demo-apps.png" alt="devices" class="img-fluid" id="portfolio-header-devices-image">
+                </div>
+              </div>
+
+              <div class="row" id="portfolio-intro-row">
+                <div class="col-12" id="portfolio-intro-col">
+                  <p>I developed the applications below with the goal of demonstrating proficiency in a wide range of front-end and back-end software development skills.</p>
+                  <p>I have created a GitHub repository for each of the applications containing their code and assets. <span>I strongly encourage you to carefully review the source code for each application in detail so that you can fully evaluate the knowledge applied and techniques employed.</span></p>
+                  <p>When viewing the applications with a desktop browser, I also recommend that you resize the browser window from very wide to very narrow to see the responsiveness of each application's layout.</p>
+                </div>
+              </div>
+
+              <div class="row app-row" id="portfolio-app-row-1">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-5" id="app-image-col-1">
+                  <img src="images/why-interview-dave-site.jpg" alt="whyinterviewdave.com" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-12 col-lg-7" id="app-description-col-1">
+                  <h3>whyinterviewdave.com</h3>
+                  <hr>
+                  <p>This static résumé web site demonstrates a wide range of front-end skills and knowledge.&nbsp; Notable technologies used in development of this site include:</p>
+                  <div class="portfolio-list-wrapper">
+                    <div class="portfolio-list">
+                      <ul>
+                        <li>Bootstrap</li>
+                        <li>CSS Animations</li>
+                        <li>Sass</li>
+                        <li>Google Maps</li>
+                        <li>SVG Images</li>
+                        <li>Hosted on GitHub Pages</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="portfolio-buttons">
+                    <a href="https://github.com/davidg1/why-interview-dave" role="button" target="_blank" class="btn btn-primary">GitHub Repo&nbsp; <i class="fa fa-github"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row app-row" id="portfolio-app-row-2">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-5 order-lg-2" id="app-image-col-2">
+                  <img src="images/eight-octopus-recipes.jpg" alt="eight octopus recipes app" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-12 col-lg-7 order-lg-1" id="app-description-col-2">
+                  <h3>Eight Octopus Recipes React Application</h3>
+                  <hr>
+                  <p>A React application inspired by HBO's Silicon Valley comedy series demonstrating client-side development capabilities including:</p>
+                  <div class="portfolio-list-wrapper">
+                    <div class="portfolio-list">
+                      <ul>
+                        <li>React</li>
+                        <li>React Router</li>
+                        <li>Component Animation using react&#x2011;transition&#x2011;group</li>
+                        <li>CSS Modules</li>
+                        <li>Styled Components</li>
+                        <li>Fetch API</li>
+                        <li>CSS Flexbox</li>
+                        <li>CSS Transforms, Transitions and Animations</li>
+                        <li>CSS <span class="monospace">calc()</span> function</li>
+                        <li>HTML5 <span class="monospace">&lt;video&gt;</span></li>
+                        <li>USDA Food Composition Database API</li>
+                        <li>Deployed on Netlify</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="portfolio-buttons">
+                    <a href="https://github.com/davidg1/eight-octopus-recipes" role="button" target="_blank" class="btn btn-primary">GitHub Repo&nbsp; <i class="fa fa-github"></i></a>
+                    <a href="https://eight-octopus-recipes.netlify.app" role="button" target="_blank" class="btn btn-primary">Launch the App&nbsp; <i class="fa fa-rocket" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row app-row" id="portfolio-app-row-3">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-5" id="app-image-col-3">
+                  <img src="images/adjective-collector-app.jpg" alt="adjective collector app" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-12 col-lg-7" id="app-description-col-3">
+                  <h3>Adjective Collector Application</h3>
+                  <hr>
+                  <p>A full-stack application providing examples of both client-side and server-side development capabilities including:</p>
+                  <div class="portfolio-list-wrapper">
+                    <div class="portfolio-list">
+                      <ul>
+                        <li>Node/Express</li>
+                        <li>MongoDB/Mongoose</li>
+                        <li>Form Data Sanitization</li>
+                        <li>EJS Templates</li>
+                        <li>MVC Architecture</li>
+                        <li>Wordnik Dictionary API</li>
+                        <li>Passport Authentication</li>
+                        <li>bcrypt</li>
+                        <li>Flash Messages</li>
+                        <li>AJAX/Axios</li>
+                        <li>Promises</li>
+                        <li>Parsley Validation Library</li>
+                        <li>Event Delegation</li>
+                        <li>Sass</li>
+                        <li>Lodash</li>
+                        <li>Regular Expressions</li>
+                        <li>Deployed on Heroku and MongoDB Atlas</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="portfolio-buttons">
+                    <a href="https://github.com/davidg1/adjective-collector" role="button" target="_blank" class="btn btn-primary">GitHub Repo&nbsp; <i class="fa fa-github"></i></a>
+                    <a href="https://adjective-collector.herokuapp.com/" role="button" target="_blank" class="btn btn-primary">Launch the App&nbsp; <i class="fa fa-rocket" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row app-row" id="portfolio-app-row-4">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-5 order-lg-2" id="app-image-col-4">
+                  <img src="images/word-image-builder-app.jpg" alt="word image builder app" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-12 col-lg-7 order-lg-1" id="app-description-col-4">
+                  <h3>Word Image Builder Angular Application</h3>
+                  <hr>
+                  <p>An Angular Single Page Application inspired by my enthusiasm for playing the game of Scrabble!!&nbsp; Instead of using a database to store a user's created word images, they are stored in the browser's local storage.&nbsp; Programming of this application involved:</p>
+                  <div class="portfolio-list-wrapper">
+                    <div class="portfolio-list">
+                      <ul>
+                        <li>Angular Single Page Application
+                          <ul>
+                            <li>Angular CLI</li>
+                            <li>Property Binding</li>
+                            <li>Event Binding</li>
+                            <li>Angular Router</li>
+                            <li>Route Parameters</li>
+                            <li>Template Variables/Expressions</li>
+                            <li><span class="monospace">*ngFor</span> and <span class="monospace">*ngIF</span> Directives</li>
+                            <li><span class="monospace">@ViewChild</span> Decorator</li>
+                            <li>Angular Reactive Forms</li>
+                            <li>Angular Validators</li>
+                            <li>Dependency Injection</li>
+                            <li>Custom Angular Service</li>
+                            <li>Observables</li>
+                            </ul>
+                        </li>
+                        <li>TypeScript</li>
+                        <li>localStorage</li>
+                        <li><span class="monospace">JSON.stringify()</span> and <span class="monospace">JSON.parse()</span></li>
+                        <li>Bootstrap</li>
+                        <li>CSS Vendor Prefixes</li>
+                        <li>HTML &lt;canvas&gt; for Image Creation</li>
+                        <li>Data URI Images</li>
+                        <li>Regular Expressions</li>
+                        <li>Deployed on Firebase</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="portfolio-buttons">
+                    <a href="https://github.com/davidg1/word-image-builder" role="button" target="_blank" class="btn btn-primary">GitHub Repo&nbsp; <i class="fa fa-github"></i></a>
+                    <a href="https://word-image-builder.firebaseapp.com" role="button" target="_blank" class="btn btn-primary">Launch the App&nbsp; <i class="fa fa-rocket" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+
+              <div class="row app-row" id="portfolio-app-row-5">
+                <div class="col-12 offset-md-2 col-md-8 offset-lg-0 col-lg-5" id="app-image-col-5">
+                  <img src="images/self-drawing-form-app.jpg" alt="self-drawing form app" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-12 col-lg-7" id="app-description-col-5">
+                  <h3>Self-Drawing Form Application</h3>
+                  <hr>
+                  <p>A full-stack demo application that provided interesting challenges in keeping the "underlying" form aligned with the "drawn" form above it while at the same time maintaining responsiveness of the layout.&nbsp; Some details are given in the comments of the styles.css file under "Explanation of Positioning and Sizing of HTML elements and SVG images". Successfully submitted messages are stored in a MySQL database and a response email is sent to the user.&nbsp; Development of this application involved use of the following:</p>
+                    <div class="portfolio-list-wrapper">
+                    <div class="portfolio-list">
+                      <ul>
+                        <li>Node/Express</li>
+                        <li>MySQL</li>
+                        <li>Form Data Sanitization</li>
+                        <li>EJS Templates</li>
+                        <li>Vivus Library for SVG Animation</li>
+                        <li>Promises</li>
+                        <li>"Promisfied" Function</li>
+                        <li>Nodemailer for Emails</li>
+                        <li>Normalize.css</li>
+                        <li>validate.js Library</li>
+                        <li>Deployed on Vultr Virtual Private Server</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="portfolio-buttons">
+                    <a href="https://github.com/davidg1/self-drawing-form" role="button" target="_blank" class="btn btn-primary">GitHub Repo&nbsp; <i class="fa fa-github"></i></a>
+                    <a href="http://45.76.27.202" role="button" target="_blank" class="btn btn-primary">Launch the App&nbsp; <i class="fa fa-rocket" aria-hidden="true"></i></a>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Contact Tab Panel -->
+
+            <div role="tabpanel" class="tab-pane" id="contact-panel">
+              <address>
+                David Garrison, <span class="cert-credentials">OCP</span><br>
+                11291 Kingfisher Court<br>
+                Holland, MI 49424<br>
+                <a href="tel: 616-377-9518"></a>616-377-9518<br>
+                <a href="mailto: dcg484@gmail.com">dcg484@gmail.com</a>
+              </address>
+              <button type="button" data-toggle="modal" data-target="#lighthouse-modal" class="btn btn-primary" id="photo-map-btn"><i class="fa fa-map-marker fa-lg" aria-hidden="true"></i>&nbsp; See Photo's Location</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Google Maps/Lighthouse Modal -->
+
+    <div class="modal fade" id="lighthouse-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-body">
+            <h3>"Big Red" Lighthouse in Holland, Michigan</h3>
+            <div id="lighthouse-map"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+    <script src="js/scripts.js"></script>
+
+    <!-- The use of this Google Maps key has been restricted to HTTP requests from *.whyinterviewdave.com/* -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD31njj-nurpJ2lSAGbAoMeRmR_6Kgo4S4&callback=initLighthouseMap"></script>
+
+    <!-- Start of StatCounter Code -->
+    <script type="text/javascript">
+      var sc_project=11636756;
+      var sc_invisible=1;
+      var sc_security="2c082af2";
+    </script>
+    <script type="text/javascript" src="https://www.statcounter.com/counter/counter.js" async></script>
+    <noscript>
+      <div class="statcounter">
+        <a title="web statistics" href="http://statcounter.com/" target="_blank"><img class="statcounter" src="//c.statcounter.com/11636756/0/2c082af2/1/" alt="web statistics"></a>
+      </div>
+    </noscript>
+    <!-- End of StatCounter Code -->
+  </body>
+</html>

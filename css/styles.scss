@@ -1,0 +1,2124 @@
+@use 'sass:math';
+
+$lightBlue: #bedbff;
+$blue: #305687;
+$skyBlue: #1E328C;
+$lightSkyBlue: #1B69B3;
+$lightBeige: #f2ecdc;
+$beige: #B3A880;
+$darkBeige: #948a66;
+$brown: #332e1c;
+$orange: #de7439;
+$burgandy: #853645;
+$white: #fff;
+$michiganBlue: #142340;
+$maize: #FECD3C;
+$gray: #808080;
+$darkGray: #333;
+$steelBlue: #497FB0;
+$green: #54847A;
+$brightGreen: #aed780;
+$pastelOrange: #F0CDAE;
+$pastelGreen: #AFD3BC;
+$pastelBlue: #90A6CE;
+$pastelRed: #CA908F;
+$pastelYellow: #FEE4AA;
+$pastelBrown: #EFD9C1;
+$pastelTurquoise: #A6CED1;
+$pastelGray: #ADAAB7;
+$oliveGreen: #a5bb83;
+
+$embellishmentHeight: 36px;
+$embellishmentWidth: math.div(48, 26) * $embellishmentHeight;
+
+
+body {
+  background-color: $lightBeige;
+  background-image: url('../images/gn2.jpg');
+  color: $blue;
+  font-family: "Raleway", sans-serif;
+
+  font-size: 14px;
+  line-height: 1.42857143;
+
+  font-weight: 600;
+  min-width: 360px;
+}
+
+
+.no-break { white-space: nowrap; }
+
+p {
+  margin: 0 0 10px;
+}
+
+h2 {
+  font-size: 30px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
+h2, h3 {
+  line-height: 1.1;
+}
+
+.container-md {  
+  @media (min-width: 768px) {
+    max-width: 750px;
+  }
+
+  @media (min-width: 992px) {
+    max-width: 970px;
+  }
+  
+  @media (min-width: 1200px) {
+    max-width: 1170px;
+  }
+}
+
+
+/*******************************************************************************
+*****************************  Loading Modal ***********************************
+*******************************************************************************/
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+#loading-modal {
+  width: 100%;
+  height: 100vh;
+  background-color: $lightBeige;
+  position: fixed;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loading-spinner {
+  width: 70px;
+  height: 70px;
+  border: 5px solid $pastelBlue;
+  border-top: 5px solid $skyBlue;
+  border-radius: 50%;
+  animation: spin .6s linear infinite;
+}
+
+
+/*******************************************************************************
+********************************************************************************
+*****************************  Intro Style Rules *******************************
+********************************************************************************
+*******************************************************************************/
+
+#intro-row {
+  background-color: $blue;
+  border: 2px solid $white;
+  padding-top: 12px;
+  padding-right: 8px;
+  padding-left: 8px;
+  margin-top: 15px;
+
+  div[class *= "col-"] {
+    padding-left: 5px;
+    padding-right: 5px;
+  }
+}
+
+
+#intro-text {
+  background-color: $beige;
+  border: 1px solid $lightBeige;
+  padding-right: 30px;
+  padding-bottom: 20px;
+  padding-left: 30px;
+  margin-bottom: 12px;
+
+  h1 {
+    font-family: "Bitter", sans-serif;
+    font-size: 60px;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+
+  h1 span:first-child {
+    color: $blue;
+    text-shadow: 1px 1px 1px darken($blue, 12%);
+  }
+
+  h1 span:nth-of-type(2) {
+    color: $lightBeige;
+    text-shadow: 1px 1px 2px $brown;
+    font-family: "Raleway", sans-serif;
+    font-weight: 600;
+  }
+
+  hr {
+    background-color: #333;
+    background-image: linear-gradient(to right, $darkBeige, $brown, $darkBeige);
+    border: 0;
+    height: 1px;
+    margin-bottom: 18px;
+  }
+}
+
+.embellishment {
+  width: $embellishmentWidth;
+  height: $embellishmentHeight;
+  vertical-align: baseline;
+
+  path {
+    fill: $blue;
+    stroke: none;
+  }
+}
+
+.highlight {
+  color: $burgandy;
+  font-weight: 800;
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+  #intro-text {
+    padding-bottom: 16px;
+
+    h1 {
+      font-size: 45px;
+      margin-top: 14px;
+    }
+
+    hr {
+      margin: 10px 0 15px;
+    }
+  }
+
+  .embellishment {
+    width: $embellishmentWidth * 0.8;
+    height: $embellishmentHeight * 0.8;
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 991px) {
+  #intro-row {
+    padding-bottom: 30px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  #intro-row {
+    background-image: url('../images/diamonds-embellishment.png'), url('../images/diamonds-embellishment.png');
+    background-position: bottom 68px right 24px, bottom 68px left 24px;
+    background-repeat: no-repeat;
+  }
+}
+
+@media (max-width: 767px) {
+  #intro-row {
+    margin-top: 0;
+  }
+
+  #intro-text {
+    padding-bottom: 18px;
+
+    h1 {
+      font-size: 50px;
+      margin-top: 16px;
+      margin-bottom: 0;
+    }
+
+    hr {
+      margin-top: 14px;
+    }
+  }
+
+  .embellishment {
+    width: $embellishmentWidth * 0.8;
+    height: $embellishmentHeight * 0.8;
+    margin-bottom: 3px;
+  }
+}
+
+@media (max-width: 549px) {
+  #intro-text {
+    padding-bottom: 15px;
+
+    h1 {
+      font-size: 45px;
+      margin-top: 14px;
+    }
+
+    hr {
+      margin-top: 11px;
+      margin-bottom: 16px;
+    }
+
+    button {
+      margin-top: 15px;
+    }
+  }
+
+  .embellishment {
+    width: $embellishmentWidth * 0.7;
+    height: $embellishmentHeight * 0.7;
+    margin-bottom: 2px;
+  }
+}
+
+@media (max-width: 459px) {
+  #intro-text {
+    padding-right: 22px;
+    padding-left: 22px;
+
+    h1 {
+      font-size: 36px;
+    }
+  }
+
+  .embellishment {
+    width: $embellishmentWidth * 0.6;
+    height: $embellishmentHeight * 0.6;
+    margin-bottom: 0;
+  }
+}
+
+
+#qualifications-button {
+  background-color: $darkBeige;
+  color: darken($lightBeige, 2%);
+  border-color: darken($darkBeige, 20%);
+  box-shadow: 1px 1px 1px $darkBeige;
+  display: block;
+  font-family: "Patua One", sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  padding-right: 12px;
+  padding-left: 12px;
+  margin: 20px auto 2px;
+
+  &:focus {
+    outline: revert;
+    outline-color: $burgandy;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    background-color: darken($darkBeige, 5%);
+  }
+
+  &:active {
+    background-color: darken($darkBeige, 10%);
+    outline: 0;
+  }
+}
+
+
+#intro-images {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  background-color: $blue;
+  background-image: url('../images/blue-background.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  // The following enables the div to have the same height as its background-image.
+  // For details see: https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+  height: 0;
+  padding-top: 62.133333%;  //Background image is 750 x 466
+}
+
+@media (max-width: 991px){
+  #intro-images {
+    margin-bottom: 17px;
+  }
+}
+
+#card-container {
+  perspective: 600px;
+}
+
+#card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1.3s ease;
+  transform-style: preserve-3d;
+}
+
+#front, #back {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  backface-visibility: hidden;
+  transform: translateY(-100%);
+}
+
+#back {
+  width: 100%;
+  transform: translateY(-100%) rotateY(180deg);
+  background-image: url('../images/orange-rectangle-background.jpg');
+  background-size: contain;
+  background-repeat: no-repeat;
+
+  // The following enables the div to have the same height as its background-image.
+  // For details see: https://stackoverflow.com/questions/600743/how-to-get-div-height-to-auto-adjust-to-background-size
+  height: 0;
+  padding-top: 62.133333%;  // Background image is 750 x 466
+}
+
+#intro-image {
+  border: 1px solid $beige;
+  margin: 0 auto;
+}
+
+.rotate {
+  transform: rotateY(180deg);
+}
+
+@keyframes fadeInFromLeft {
+  from {
+    padding-right: 20px;
+    opacity: 0;
+  }
+
+  to {
+    padding-right: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInFromRight {
+  from {
+    padding-left: 20px;
+    opacity: 0;
+  }
+  to {
+    padding-left: 0;
+    opacity: 1;
+  }
+}
+
+.hand {
+  display: inline-block;
+  margin: 0 7px;
+  animation-duration: 1.8s;
+  animation-iteration-count: infinite;
+
+  &.hand-pointing-right {
+    animation-name: fadeInFromLeft;
+  }
+
+  &.hand-pointing-left {
+    animation-name: fadeInFromRight;
+  }
+}
+
+#disclaimer-links {
+  padding-top: 11px;
+
+  p {
+    margin-top: 3px;
+  }
+}
+
+#disclaimer-link-1, #disclaimer-link-2, #click-button-caption {
+  font-family: "Patua One", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $lightBlue;
+}
+
+#disclaimer-link-2 {
+  display: none;
+}
+
+#click-button-caption {
+  display: none;
+  font-size: 14px;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+@media (max-width: 429px) {
+  #disclaimer-link-1, #disclaimer-link-2 {
+    font-size: 15px;
+  }
+  
+  #click-button-caption {
+    font-size: 12px;
+  }
+}
+
+#disclaimer-info-1, #disclaimer-info-2 {
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $lightBeige;
+  border: 1px solid $lightBeige;
+  font-family: "Bitter", serif;
+  font-size: 18px;
+  text-shadow: 1px 1px 1px darken($blue, 10%);
+  text-align: left;
+  padding: 0 30px;
+  
+  a {
+    color: $blue;
+    text-shadow: 1px 1px 1px darken($orange, 10%);
+    margin: 0 3px;
+
+    &:hover {
+      color: $beige;
+    }
+
+    &:focus {
+      border: 2px solid darken($orange, 35%);
+      outline: none;
+    }
+  }
+}
+
+#disclaimer-info-1 {
+  display: flex;
+}
+
+#disclaimer-info-2 {
+  display: none;
+}
+
+@media (max-width: 1199px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 16px;
+
+    button {
+      margin-top: 5px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 18px;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 767px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 22px;
+    padding: 0 50px;
+
+    p {
+      margin-bottom: 22px;
+    }
+
+    button {
+      margin-top: 0;
+    }
+  }
+}
+
+@media (max-width: 669px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 21px;
+
+    p {
+      margin-bottom: 19px;
+    }
+  }
+}
+
+@media (max-width: 629px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 569px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 17px;
+    padding: 0 40px;
+  }
+}
+
+@media (max-width: 529px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 16px;
+    padding: 0 30px;
+
+    p {
+      margin-bottom: 15px;
+    }
+  }
+}
+
+@media (max-width: 479px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 15px;
+    padding: 0 25px;
+
+    p {
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@media (max-width: 439px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 14px;
+    padding: 0 25px;
+
+    p {
+      margin-bottom: 10px;
+    }
+  }
+}
+
+@media (max-width: 419px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 13px;
+    padding: 0 20px;
+
+    p {
+      margin-bottom: 8px;
+    }
+  }
+}
+
+@media (max-width: 389px) {
+  #disclaimer-info-1, #disclaimer-info-2 {
+    font-size: 12px;
+
+    p {
+      margin-bottom: 7px;
+    }
+  }
+}
+
+#disclaimer-info-button-1, #disclaimer-info-button-2 {
+  background-color: $blue;
+  color: $lightBeige;
+  border: 1px solid $lightBeige;
+  box-shadow: 1px 1px 1px $blue;
+  font-family: "Patua One", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.43;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+
+  &:focus {
+    outline: revert;
+    outline-color: $blue;
+    outline-offset: 4px;
+  }
+
+  &:hover {
+    background-color: $lightBeige;
+    color: $blue;
+    border-color: $blue;
+  }
+
+  &:active {
+    background-color: darken($blue, 5%);
+    color: $white;
+    outline: 0;
+  }
+}
+
+@keyframes move-up-down {
+  from {
+    transform: translateY(5px);
+  }
+  to {
+    transform: translateY(-5px);
+  }
+}
+
+#read-disclaimer-instructions {
+  background-color: $burgandy;
+  color: lighten($lightBeige, 2%);
+  border: 1px solid white;
+  border-radius: 20px;
+  box-shadow: 4px 4px 7px $gray;
+  font-size: 14px;
+  display: none;
+  margin-top: 12px;
+  margin-bottom: 13px;
+  padding: 7px 21px 0;
+  animation: move-up-down .5s linear infinite alternate;
+
+  i {
+    font-size: 65px;
+  }
+}
+
+.cursive {
+  color: $maize;
+  font-family: "Lobster", cursive;
+  font-size: 1.3em;
+  margin-right: 3px;
+}
+
+@media (max-width: 469px) {
+  #read-disclaimer-instructions {
+    padding: 7px 12px 0;
+
+    p {
+      width: 200px;
+      line-height: 1.3;
+    }
+  }
+}
+
+
+/*******************************************************************************
+********************************************************************************
+************************* Qualifications Style Rules ***************************
+********************************************************************************
+*******************************************************************************/
+
+#qualifications-container {
+  display: none;
+  margin-top: 25px;
+}
+
+
+/*******************************************************************************
+**************************** Tabs Style Rules **********************************
+*******************************************************************************/
+#qualifications-tabs {
+  border-bottom: none;
+
+  a {
+    color: $lightBlue;
+    font-family: "Patua One", sans-serif;
+    font-weight: 400;
+    position: relative;
+  	display: inline-block;
+    padding: 15px 20px 8px;
+    margin-right: -6px;     // Added so tabs overlap each other
+    margin-bottom: -3px;    // Shifts the content area up so that there are no gaps under the tabs
+
+    &:first-of-type {
+    	margin-left: 20px;
+    }
+
+    &:last-of-type {
+      margin-left: auto;
+      margin-right: 20px;
+    }
+
+    &#contact-link {
+      color: $lightBeige;
+    }
+
+    &:hover {
+      background-color: transparent;
+      color: $lightBeige;
+      border: none;
+    }
+
+    &:focus {
+      background-color: transparent;
+      color: $lightBeige;
+      border: none;
+      outline-color: $burgandy;
+    }
+
+    // The "trapezoid-shape" of the tabs is created using the 3D transformation of
+    // a pseudo-element (inspired by a technique presented in the CSS Secrets book
+    // by Lea Verou).
+    &::before {
+    	content: '';
+    	position: absolute;
+    	top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+    	z-index: -1;
+      background-color: $blue;
+      border-radius: 8px 8px 0 0;
+    	transform: scale(1.1, 1.3) perspective(7px) rotateX(5deg);
+    	transform-origin: bottom;
+    }
+
+    &#contact-link::before {
+      background-color: $burgandy;
+    }
+
+    &:hover::before {
+    	background-color: $beige;
+    }
+
+    &#contact-link:hover::before {
+    	background-color: $beige;
+    }
+
+    & .fa {
+      padding-right: 7px;
+    }
+
+    &.active {
+      background-color: transparent;
+      border: none;
+      z-index: 2;
+ 
+      &#skills-link {
+        color: $lightBeige;
+      }
+
+      &#skills-link::before {
+        background-color: $darkBeige;
+      }
+
+      &#education-link {
+        color: $michiganBlue;
+      }
+
+      &#education-link::before {
+        background-color: $maize;
+      }
+
+      &#experience-link {
+        color: $steelBlue;
+      }
+
+      &#experience-link::before {
+       background-color: $white;
+      }
+
+      &#portfolio-link {
+       color: $white;
+      }
+
+      &#portfolio-link::before {
+       background-color: darken($oliveGreen, 8%);
+      }
+
+      &#contact-link::before {
+       background-color: $skyBlue;
+      }
+    }
+  }
+}
+
+
+@media (max-width: 659px) {
+  #qualifications-tabs {
+    & a:first-of-type {
+    	margin-left: -10px;
+    }
+
+    & a:last-of-type {
+      margin-right: -9px;
+    }
+
+    & a {
+      padding-right: 16px;
+      padding-left: 16px;
+    }
+  }
+}
+
+
+@media (max-width: 559px) {
+  #qualifications-tabs .fa {
+   display: none;
+  }
+}
+
+
+@media (max-width: 449px) {
+  #qualifications-tabs a {
+    padding-right: 13px;
+    padding-left: 13px;
+  }
+}
+
+
+@media (max-width: 419px) {
+  #qualifications-tabs a {
+    font-size: 13px;
+    padding-right: 11px;
+    padding-left: 11px;
+  }
+}
+
+
+/*******************************************************************************
+************************* Skills Tab Panel Style Rules *************************
+*******************************************************************************/
+#skills-panel {
+  margin-bottom: 30px;
+
+  .row {
+    padding-top: 25px;
+    padding-bottom: 25px;
+
+    &:nth-child(odd) {
+      background-color: $darkBeige;
+      color: $lightBeige;
+
+      .skill-image {
+        border: 2px solid $beige;
+      }
+    }
+
+    &:nth-child(even) {
+      background-color: $lightBeige;
+      color: $darkBeige;
+
+      .skill-image {
+        border: 2px solid $darkBeige;
+      }
+    }
+  }
+}
+
+#skills-intro-image-col {
+  text-align: center;
+  padding-right: 0;
+  padding-left: 20px;
+
+  img {
+    display: inline-block;
+
+    &:last-of-type {
+      display: none;
+    }
+  }
+}
+
+#skills-intro-text-col {
+  padding: 3px 55px 0 22px;
+
+  h3 {
+    margin-top: 0;
+  }
+
+  hr {      
+    border-color: $lightBeige;
+    margin: 14px 0 17px;
+  }
+}
+
+.skill-images-col {
+  text-align: center;
+
+  &:nth-of-type(2) {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+}
+
+.skill-image {
+  background-image: url(../images/sunburst.png);
+  background-size: cover;
+  display: inline-block;
+  max-width: 105px;
+  padding: 4px;
+  margin-right: 5px;
+  margin-left: 5px;
+
+  &.square-image {
+    padding: 8px;
+  }
+}
+
+.skills-description {
+  margin-top: 9px;
+
+  h1 {
+    font-size: 36px;
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: center;
+    margin-top: 12px;
+   
+    & ~ p {
+      color: $blue;
+      font-size: 1.3em;
+      margin-top: 27px;
+    }
+  }
+
+  h2, h3 {
+    color: $blue;
+    font-weight: 700;
+    text-align: center;
+  }
+
+  h2 {
+    margin: 12px 0 10px;
+  }
+
+  h3 {
+    margin-top: 10px;
+    margin-bottom: 20px;
+  }
+
+  h4 {
+    font-size: 18px;
+    text-align: center;
+    margin-top: -11px;
+    margin-bottom: 12px;
+  }
+
+  p {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+.skills-heading-smaller {
+  font-size: 0.7em;
+}
+
+
+@media (max-width: 1199px) {
+  #skills-intro-image-col {
+    padding-top: 4px;
+  }
+}
+
+@media (max-width: 991px) {
+  #skills-intro-image-col {
+    padding-top: 0;
+    padding-left: 0;
+
+    img {
+      &:first-of-type {
+        display: none;
+      }
+
+      &:last-of-type {
+        display: inline-block;
+        max-height: 180px;
+        margin-top: 0;
+        margin-bottom: 10px;
+      }
+    }
+  }
+
+  #skills-intro-text-col {
+    padding-top: 0;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 529px) {
+  .skill-image {
+    max-width: 21%;
+    margin-right: 3px;
+    margin-left: 3px;
+  }
+
+  #skills-intro-text-col {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+@media (max-width: 469px) {
+  .skills-description {
+    p {
+      padding-right: 10px;
+      padding-left: 10px;
+    }
+  }
+}
+
+
+.monospace {
+  color: $burgandy;
+  font-family: "Source Code Pro", monospace;
+  font-weight: 700;
+}
+
+
+#c-sharp-row {
+  p:first-of-type {
+    margin-top: 5px;
+  }
+
+  p:last-of-type {
+    padding-right: 0;
+  }
+}
+
+
+#c-sharp-skills-list {
+  padding-left: 210px;
+  margin-top: 16px;
+
+  & > ul {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    list-style-position: inside;
+    list-style-image: url("../images/c-sharp-list-style.png");
+    padding-left: 0;
+    margin-bottom: 6px;
+
+    & > li {
+      padding-bottom: 10px;
+
+      ul {
+       list-style-type: none;
+       list-style-image: none;
+       padding-left: 35px;
+
+        & > li {
+         margin-bottom: -2px;
+        }
+      }
+    }
+  }
+
+  & > ul:nth-of-type(2) {
+    margin-left: 42px;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #c-sharp-skills-list {
+    padding-left: 215px;
+  }
+}
+
+@media (max-width: 991px) {
+  #c-sharp-skills-list {
+    padding-left: 182px;
+  }
+}
+
+@media (max-width: 767px) {
+  #c-sharp-list-wrapper {
+    text-align: center;
+  }
+  
+  #c-sharp-skills-list {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 699px) {
+  #c-sharp-skills-list {
+    display: inline-block;
+    margin-top: 9px;
+
+    & > ul {
+      display: block;
+      margin: 0 auto;
+    }
+
+    & > ul:nth-of-type(2) {
+      margin-left: 0;
+    } 
+  }
+}
+
+
+.es-version {
+  font-size: 0.7em;
+  color: $blue;
+  margin-left: 5px;
+}
+
+
+#ecmascript-row {
+  h2:last-of-type {
+    margin-top: 10px;
+  }
+}
+
+
+.ecmascript-list {
+  margin-top: 16px;
+
+  & > ul {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    list-style-position: inside;
+    list-style-image: url("../images/ecmascript-list-style.png");
+    padding-left: 0;
+    margin-bottom: 0;
+
+    & > li {
+      padding-bottom: 10px;
+
+      ul {
+       list-style-type: none;
+       list-style-image: none;
+       padding-left: 35px;
+
+        & > li {
+         margin-bottom: -2px;
+        }
+      }
+    }
+  }
+
+  & > ul:nth-of-type(2) {
+    margin-left: 30px;
+  }
+}
+
+
+#javascript-skills-list {
+  padding-left: 115px;
+}
+
+#es6-skills-list {
+  padding-left: 140px;
+  margin-bottom: 12px;
+}
+
+#es7-to-es10-skills-list {
+  padding-left: 100px;
+
+  li {
+      padding-left: 1em;
+      text-indent: -1em;
+    }
+}
+
+@media (max-width: 1199px) {
+  #es7-to-es10-skills-list {
+    padding-left: 120px;
+  }
+}
+
+@media (max-width: 991px) {
+  #javascript-skills-list {
+    padding-left: 83px;
+  }
+  
+  #es6-skills-list {
+    padding-left: 100px;
+  }
+  
+  #es7-to-es10-skills-list {
+    padding-left: 80px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ecmascript-list-wrapper {
+    text-align: center;
+  }
+  
+  #javascript-skills-list {
+    padding-left: 0;
+  }
+  
+  #es6-skills-list {
+    padding-left: 0;
+  }
+  
+  #es7-to-es10-skills-list {
+    padding-left: 0;
+  }
+}
+
+@media (max-width: 699px) {
+  .ecmascript-list {
+    display: inline-block;
+    margin-top: 9px;
+
+    & > ul {
+      display: block;
+      padding-left: 5px;
+      margin: 0 auto;
+    }
+
+    & > ul:nth-of-type(2) {
+      margin-left: 0;
+    }  
+  }
+}
+
+@media (max-width: 659px) {
+  #es7-to-es10-skills-list {
+    ul {
+      padding: 0 40px 0 60px;
+    } 
+  }
+}
+
+@media (max-width: 499px) {
+  #es7-to-es10-skills-list {
+    ul {
+      padding: 0 28px 0 40px;
+    }
+  }
+}
+
+@media (max-width: 429px) {
+  #es7-to-es10-skills-list {
+    ul {
+      padding: 0 28px;
+    }
+  }
+}
+
+
+#es7-to-es10-subheading {
+  display: block;
+  margin-top: 4px;
+}
+
+
+/*******************************************************************************
+************************ Education Tab Panel Style Rules ***********************
+*******************************************************************************/
+#university-of-michigan-row {
+  background-color: $maize;
+  text-align: center;
+  padding-top: 70px;
+  padding-bottom: 45px;
+
+  img {
+    display: inline-block;
+  }
+}
+
+#um-eecs-logo-col {
+  padding-right: 0;
+  padding-left: 35px;
+}
+
+#stadium-col {
+  padding-right: 35px;
+  padding-left: 0;
+
+  img {
+    border: 1px solid $michiganBlue;
+  }
+
+  p {
+    color: darken($maize, 25%);
+    font-size: 8px;
+    text-align: center;
+    text-transform: uppercase;
+    margin-top: 4px;
+  }
+}
+
+#um-details-col {
+  color: $michiganBlue;
+  font-family: "Patua One", sans-serif;
+  font-size: 28px;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px lighten($michiganBlue, 35%);
+  text-align: center;
+  margin-top: 13px;
+
+  span {
+    font-size: 0.8em;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #university-of-michigan-row {
+    padding-top: 60px;
+    padding-bottom: 35px;
+  }
+
+  #um-details-col {
+    font-size: 24px;
+    margin-top: 7px;
+  }
+}
+
+@media (max-width: 991px) {
+  #um-details-col {
+    font-size: 30px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+  }
+
+  #um-eecs-logo-col, #stadium-col {
+    padding: 0;
+  }
+}
+
+@media (max-width: 559px) {
+  #um-details-col {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 449px) {
+  #um-details-col {
+    font-size: 18px;
+  }
+}
+
+
+#oracle-certification-row {
+  background-color: silver;
+  background-image: url("../images/abstract-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  text-align: center;
+  padding-top: 20px;
+  padding-bottom: 20px;
+
+  img {
+    display: inline-block;
+  }
+}
+
+#ocp-details-col {
+  color: $darkGray;
+  font-family: "Patua One", sans-serif;
+  font-size: 26px;
+  font-weight: 400;
+  text-shadow: 1px 1px 1px $gray;
+  padding-top: 25px;
+  padding-bottom: 15px;
+
+  p {
+    margin-bottom: 2px;
+  }
+
+  span {
+    font-size: 0.8em;
+  }
+}
+
+#ocp-logo-image {
+  max-width: 135px;
+  margin-bottom: 10px;
+}
+
+
+@media (max-width: 399px) {
+  #ocp-details-col {
+    font-size: 22px;
+  }
+}
+
+
+#self-study-row {
+  background-color: $steelBlue;
+  margin-bottom: 30px;
+
+  img {
+    margin-top: 20px;
+  }
+
+  img:last-of-type {
+    display: none;
+  }
+}
+
+#self-study-heading-col {
+  padding-left: 65px;
+  margin-top: 2px;
+
+  h1 {
+    color: lighten($steelBlue, 7%);
+    font-family: "Patua One", sans-serif;
+    font-weight: 400;
+    font-size: 95px;
+    line-height: 1;
+    margin-top: 17px;
+  }
+}
+
+#self-study-details-col {
+  color: lighten(saturate(#497fb0, 19.20), 23.33);
+  padding-right: 55px;
+  padding-left: 10px;
+  margin-top: 18px;
+  margin-bottom: 28px;
+
+  a {
+    color: darken($steelBlue, 22%);
+
+    &:hover {
+      color: darken($steelBlue, 27%);
+    }
+
+    &:focus {
+      border: 2px solid $burgandy;
+      outline: none;
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #self-study-heading-col {
+    margin-top: 20px;
+
+    h1 {
+      font-size: 76px;
+    }
+  }
+}
+
+@media (max-width: 991px) {
+  #self-study-row {
+    img:first-of-type {
+      display: none;
+    }
+
+    img:last-of-type {
+      display: inline-block;
+    }
+  }
+
+  #self-study-heading-col {
+    padding-right: 0;
+    padding-left: 0;
+    margin-top: 0px;
+
+    h1 {
+      font-size: 65px;
+      text-align: center;
+      margin-top: 6px;
+      margin-bottom: 0;
+    }
+
+    br {
+      display: none;
+    }
+  }
+
+  #self-study-details-col {
+    padding-left: 52px;
+    margin-top: 20px;
+  }
+}
+
+@media (max-width: 589px) {
+  #self-study-details-col {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+}
+
+@media (max-width: 439px) {
+  #self-study-heading-col {
+    h1 {
+      font-size: 55px;
+    }
+  }
+
+  #self-study-details-col {
+    margin-top: 14px;
+  }
+}
+
+
+/*******************************************************************************
+*********************** Experience Tab Panel Style Rules ***********************
+*******************************************************************************/
+#experience-panel .row {
+  background-image: url("../images/programmer-background.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: left top;
+  margin-bottom: 35px;
+}
+
+#experience-panel.active .row {
+  border-top: 8px solid $white;
+}
+
+#experience-col {
+  color: $white;
+  font-size: 16px;
+  line-height: 1.7;
+  text-shadow: 1px 1px 2px darken($steelBlue, 50%);
+  padding: 23px 160px 25px;
+
+  h3 {
+    margin-top: 18px;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border-color: $white;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #experience-col {
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  #experience-col {
+    padding-right: 70px;
+    padding-left: 70px;
+  }
+}
+
+@media (max-width: 749px) {
+  #experience-col {
+    padding-right: 45px;
+    padding-left: 45px;
+  }
+}
+
+@media (max-width: 549px) {
+  #experience-col {
+    padding-right: 25px;
+    padding-left: 25px;
+  }
+}
+
+
+/*******************************************************************************
+************************ Portfolio Tab Panel Style Rules ***********************
+*******************************************************************************/
+#portfolio-header-row {
+  background-color: $oliveGreen;
+  background-image: url("../images/olive-green-lower-angle.png"), url("../images/3d-geometric-background.jpg");
+  background-position: bottom right, top left;
+  background-repeat: no-repeat;
+  background-size: contain, cover;
+  padding-top: 2px;
+  padding-bottom: 62px;
+}
+
+#portfolio-header-devices-image {
+  display: block;
+  margin-top: 25px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#portfolio-header-text-image {
+  display: block;
+  margin-top: 70px;
+}
+
+
+@media (max-width: 1199px) {
+  #portfolio-header-row {
+    padding-bottom: 58px;
+  }
+
+  #portfolio-header-text-image {
+    padding-right: 13px;
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 991px) {
+  #portfolio-header-row {
+    padding-bottom: 70px;
+  }
+
+  #portfolio-header-devices-image {
+    margin-top: 10px;
+  }
+
+  #portfolio-header-text-image {
+    padding-right: 0;
+    margin-top: 17px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 459px) {
+  #portfolio-header-row {
+    padding-bottom: 55px;
+  }
+}
+
+
+#portfolio-intro-row {
+  background-color: lighten($oliveGreen, 35%);
+  background-image: url("../images/olive-green-angle.jpg");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: bottom left;
+  font-size: 1.2em;
+  padding: 30px 90px 75px;
+  margin-top: -1px;
+
+  p {
+    margin-bottom: 15px;
+
+    span {
+      color: darken($oliveGreen, 30%);
+      font-weight: 800;
+    }
+  }
+}
+
+@media (max-width: 1199px) {
+  #portfolio-intro-row {
+    padding-bottom: 63px;
+  }
+}
+
+@media (max-width: 991px) {
+  #portfolio-intro-row {
+    padding-top: 28px;
+    padding-bottom: 65px;
+  }
+}
+
+@media (max-width: 767px) {
+  #portfolio-intro-row {
+    padding: 26px 60px 55px;
+  }
+}
+
+@media (max-width: 699px) {
+  #portfolio-intro-row {
+    padding-right: 40px;
+    padding-left: 40px;
+  }
+}
+
+@media (max-width: 649px) {
+  #portfolio-intro-row {
+    padding-bottom: 35px;
+  }
+}
+
+@media (max-width: 569px) {
+  #portfolio-intro-row {
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+
+@media (max-width: 499px) {
+  #portfolio-intro-row {
+    padding-bottom: 25px;
+  }
+}
+
+
+.app-row {
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom left;
+  margin-top: -2px;
+
+  img {
+    border: 4px solid $blue;
+  }
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+  }
+
+  hr {
+    border-color: $blue;
+    margin: 20px 0;
+  }
+
+  &:nth-of-type(odd) {
+    background-color: darken($lightBeige, 10%);
+  }
+
+  &:nth-of-type(even) {
+    background-color: lighten($pastelYellow, 10%);
+    background-image: url("../images/pastel-yellow-angle.jpg");
+  }
+}
+
+
+#portfolio-app-row-1 {
+  background-image: url("../images/beige-angle.jpg");
+  padding-top: 38px;
+  padding-bottom: 85px;
+}
+
+#portfolio-app-row-2, #portfolio-app-row-4 {
+  padding-top: 43px;
+  padding-bottom: 93px;
+}
+
+#portfolio-app-row-3 {
+  background-image: url("../images/beige-angle.jpg");
+  padding-top: 30px;
+  padding-bottom: 96px;
+}
+
+#portfolio-app-row-5 {
+  padding-top: 30px;
+  padding-bottom: 28px;
+  margin-bottom: 25px;
+}
+
+
+#app-image-col-2, #app-image-col-3, #app-image-col-4, #app-image-col-5 {
+  margin-top: 25px;
+}
+
+#app-image-col-1, #app-image-col-3, #app-image-col-5 {
+  padding-right: 30px;
+  padding-left: 40px;
+}
+
+#app-description-col-1, #app-description-col-3, #app-description-col-5 {
+  padding-right: 50px;
+  padding-bottom: 21px;
+}
+
+
+#app-image-col-2, #app-image-col-4 {
+  padding-right: 40px;
+  padding-left: 30px;
+}
+
+#app-description-col-2, #app-description-col-4 {
+  padding-left: 50px;
+}
+
+
+.portfolio-list-wrapper {
+  text-align: center;
+}
+
+.portfolio-list {
+  padding-left: 30px;
+  margin-top: 16px;
+
+  & > ul {
+    display: inline-block;
+    vertical-align: top;
+    text-align: left;
+    list-style-position: inside;
+    list-style-image: url("../images/portfolio-list-style.png");
+    padding-left: 0;
+    margin-bottom: 10px;
+
+    & > li {
+      padding-bottom: 10px;
+
+      ul {
+       list-style-type: none;
+       list-style-image: none;
+       padding-left: 32px;
+
+        & > li {
+         margin-bottom: 1px;
+        }
+      }
+    }
+  }
+}
+
+.portfolio-buttons {
+  text-align: center;
+
+  .btn {
+    background-color: $blue;
+    color: $lightBlue;
+    border: 1px solid darken($blue, 5%);
+    font-family: "Patua One", sans-serif;
+    font-weight: 400;
+    line-height: 1.4;
+    display: inline-block;
+    width: 160px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 9px 5px 0;
+
+    &:focus {
+      background-color: $blue;
+      color: $lightBlue;
+      border: 1px solid darken($blue, 5%);
+      box-shadow: none;
+      outline: revert;
+      outline-color: $burgandy;
+      outline-width: 2px;
+      outline-offset: 4px;
+    }
+
+    &:hover {
+      background-color: darken($blue, 5%);
+      color: $white;
+    }
+
+    &:not(:disabled):active {
+      background-color: lighten($blue, 5%);
+      color: $white;
+    }
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #portfolio-app-row-1 {
+    padding-top: 14px;
+    padding-bottom: 81px;
+  }
+  
+  #portfolio-app-row-2, #portfolio-app-row-4 {
+    padding-top: 38px;
+    padding-bottom: 87px;
+  }
+  
+  #portfolio-app-row-3 {
+    padding-top: 25px;
+    padding-bottom: 85px;
+  }
+  
+  #portfolio-app-row-5 {
+    padding-top: 25px;
+    padding-bottom: 25px;
+  }
+
+  div[id^="app-image-col"] img {
+    margin-top: 40px;
+  }
+
+  #app-image-col-2, #app-image-col-3, #app-image-col-4, #app-image-col-5 {
+    margin-top: 0;
+  }
+
+  #app-image-col-1, #app-image-col-3, #app-image-col-5 {
+    padding-right: 17px;
+    padding-left: 33px;
+  }
+
+  #app-image-col-2, #app-image-col-4 {
+    padding-right: 33px;
+    padding-left: 17px;
+  }
+}
+
+@media (max-width: 991px) {
+  .app-row h3 {
+    text-align: center;
+  }
+
+  #portfolio-app-row-1, #portfolio-app-row-2, #portfolio-app-row-3, #portfolio-app-row-4, #portfolio-app-row-5 {
+    padding-top: 35px;
+  }
+  
+  #portfolio-app-row-1, #portfolio-app-row-2, #portfolio-app-row-3, #portfolio-app-row-4 {
+    padding-bottom: 85px;
+  }
+
+  #portfolio-app-row-5 {
+    padding-bottom: 28px;
+  }
+
+  div[id^="app-image-col"] img {
+    margin-top: 0;
+    margin-bottom: 33px;
+  }
+
+  #app-image-col-1, #app-image-col-2, #app-image-col-3, #app-image-col-4, #app-image-col-5 {
+    padding: 0 20px;
+  }
+
+  #app-description-col-1, #app-description-col-2, #app-description-col-3, #app-description-col-4, #app-description-col-5 {
+    padding: 0 40px;
+  }
+
+  .portfolio-buttons {
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 767px) {
+  div[id^="app-image-col"] img {
+    display: block;
+    width: 70%;
+    min-width: 300px;
+    padding-right: 0;
+    padding-left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 649px) {
+  #portfolio-app-row-1, #portfolio-app-row-2, #portfolio-app-row-3, #portfolio-app-row-4 {
+    padding-bottom: 75px;
+  }
+}
+
+@media (max-width: 439px) {
+  #portfolio-app-row-1, #portfolio-app-row-2, #portfolio-app-row-3, #portfolio-app-row-4 {
+    padding-bottom: 57px;
+  }
+}
+
+
+/*******************************************************************************
+************************ Contact Tab Panel Style Rules *************************
+*******************************************************************************/
+#contact-panel {
+  position: relative;
+  background-color: $skyBlue;
+  background-image: url("../images/big-red-lighthouse.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $white;
+  font-size: 45px;
+  text-shadow: 2px 2px 3px darken($skyBlue, 10%);
+  text-align: center;
+  margin-right: -15px;
+  margin-bottom: 30px;
+  margin-left: -15px;
+
+  address {
+    padding-top: 100px;
+    padding-bottom: 125px;
+  }
+
+  a[href^="mailto"] {
+    color: $white;
+
+    &:focus {
+      outline-color: lighten($lightSkyBlue, 45%);
+    }
+  }
+}
+
+
+@media (max-width: 579px) {
+  #contact-panel {
+    font-size: 30px;
+  }
+}
+
+
+.cert-credentials {
+  font-size: 0.66em;
+  font-weight: 400;
+}
+
+
+#photo-map-btn {
+  position: absolute;
+  bottom: 45px;
+  right: 180px;
+  background-color: rgba(27, 105, 179, 0.35);
+  color: lighten($lightSkyBlue, 25%);
+  border: 1px solid lighten($lightSkyBlue, 15%);
+  font-size: 13px;
+  font-weight: 600;
+  padding: 5px 9px;
+  box-shadow: none;
+
+  &:focus {
+    outline: revert;
+    outline-color: lighten($lightSkyBlue, 45%);
+    outline-width: 2px;
+    outline-offset: 6px;
+  }
+
+  &:hover {
+    background-color: $lightSkyBlue;
+    color: $white;
+  }
+
+  &:active {
+    background-color: darken($lightSkyBlue, 25%);
+    color: $white;
+  }
+}
+
+
+@media (max-width: 1199px) {
+  #photo-map-btn {
+    right: 100px;
+  }
+}
+
+@media (max-width: 991px) {
+  #photo-map-btn {
+    right: 65px;
+  }
+}
+
+@media (max-width: 767px) {
+  #photo-map-btn {
+    right: 25px;
+  }
+}
+
+
+/*******************************************************************************
+****************** Google Maps/Lighthouse Modal Style Rules ********************
+*******************************************************************************/
+#lighthouse-modal {
+  background-color: rgba(62, 9, 20, 0.5);
+
+  .modal-content {
+    background-color: $lightBeige;
+    color: $burgandy;
+  }
+
+  h3 {
+    font-weight: 700;
+    margin-top: 11px;
+    margin-bottom: 12px;
+  }
+
+  button {
+    background-color: $burgandy;
+    border: 1px solid darken($burgandy, 15%);
+    color: $lightBeige;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.43;
+    margin: 0;
+
+    &:focus {
+      outline: revert;
+      outline-color: $blue;
+      outline-offset: 4px;
+      box-shadow: none;
+    }
+
+    &:hover {
+      background-color: darken($burgandy, 8%);
+      color: $white;
+    }
+
+    &:active {
+      background-color: $burgandy;
+      color: $white;
+    }
+  }
+}
+
+#lighthouse-map {
+  background-color: $darkBeige;
+  width: 100%;
+  height: 400px;
+}
